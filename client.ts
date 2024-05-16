@@ -11,7 +11,9 @@ const client = HttpResolver.make<CountsRouter>(
   )
 ).pipe(Resolver.toClient);
 
-client(new Counts()).pipe(
+await client(new Counts()).pipe(
   Stream.runForEach((n) => Console.log(n)),
-  Effect.runFork
+  Effect.zipLeft(Effect.never, { concurrent: true }),
+  Effect.timeout("1 second"),
+  Effect.runPromise
 );
