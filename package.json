@@ -1,0 +1,18 @@
+{
+  "name": "effect-rpc",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "next"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@effect/rpc": "^0.30.27",
+    "@effect/rpc-http": "^0.28.27",
+    "@effect/schema": "^0.67.5",
+    "effect": "^3.1.5"
+  }
+}
